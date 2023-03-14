@@ -18,7 +18,7 @@ class EmpanadasSeeder extends Seeder
     {
         $faker = Faker::create();
         foreach( range(1,25) as $value){
-            DB::table('empanada') -> insert([
+            DB::table('empanadas') -> insert([
                 'nombre'=> $faker->name,
                 'sabor' => $faker->word,
             ]);

@@ -11,7 +11,7 @@
         </div>
     @endif
     <form>
-        <button> <a href="">Agregar</a></button>
+        <button> <a href=" {{ route('empanada.create')}}">Agregar</a></button>
         </form>
     <p>
     <div >
@@ -28,23 +28,22 @@
                     <td>{{$item -> nombre}}</td>
                     <td>{{$item -> sabor}}</td>
                     <td>
-                        <form action="" method="GET">
+                        <form action="{{ route('empanada.edit' , $item->id )}}" method="GET">
                             <button >Editar</button>
                         </form>
                     </td>
-                    <td>  
-                        <form action="" method="GET" >
+                    <td>
+                        <form>
                         <button>Eliminar</button>
                         </form>
                     </td>
                 </tr>
                 @endforeach
-               
+
             </tbody>
         </table>
     </div>
-    
+
     </p>
   </div>
 </div>
-
