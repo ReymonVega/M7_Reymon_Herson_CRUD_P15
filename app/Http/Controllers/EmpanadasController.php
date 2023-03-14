@@ -21,7 +21,7 @@ class EmpanadasController extends Controller
      */
     public function create()
     {
-        //
+        return view('agregar');
     }
 
     /**
@@ -29,7 +29,13 @@ class EmpanadasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $empanadas = new Empanadas();
+        $empanadas->nombre = $request->post('nombre');
+        $empanadas -> sabor = $request->post('sabor');
+
+         $empanadas->save();
+
+         return redirect()->route("empanada.index") ->with("success" , "Agregado con exito!");
     }
 
     /**
@@ -43,17 +49,25 @@ class EmpanadasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Empanadas $empanadas)
+    public function edit($id)
     {
-        //
+        $empanadas = Empanadas::find($id);
+         return view('actualizar' , compact('empanadas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empanadas $empanadas)
+    public function update(Request $request,$id)
     {
-        //
+        $empanadas = Empanadas::find($id);
+        $empanadas->nombre = $request->post('nombre');
+        $empanadas -> sabor = $request->post('sabor');
+
+         $empanadas->save();
+
+         return redirect()->route("empanada.index") ->with("success" , "Editado con exito!");
+
     }
 
     /**
