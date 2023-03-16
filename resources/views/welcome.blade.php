@@ -32,18 +32,20 @@
                             <button >Editar</button>
                         </form>
                     </td>
-                    <td>
-                        <form>
+                    <td>  
+                        <form action="{{ route('empanada.show' , $item->id )}}" method="GET" >
                         <button>Eliminar</button>
                         </form>
                     </td>
                 </tr>
                 @endforeach
-
+               
             </tbody>
         </table>
     </div>
-
+    
     </p>
   </div>
 </div>
+
+
