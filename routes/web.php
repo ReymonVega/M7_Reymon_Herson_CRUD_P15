@@ -11,3 +11,8 @@ Route::post('/store', [EmpanadasController::class, 'store'])->name('empanada.sto
 
 Route::get('/edit/{id}', [EmpanadasController::class, 'edit'])->name('empanada.edit');
 Route::put('/update/{id}', [EmpanadasController::class, 'update'])->name('empanada.update');
+
+
+Route::get('/show/{id}', [EmpanadasController::class, 'show'])->name('empanada.show');
+Route::delete('/delete/{id}', [EmpanadasController::class, 'destroy'])->name('empanada.destroy');
+
